@@ -48,7 +48,7 @@
     </div>
 
     <!-- Second Banner -->
-    <div class="row text-grey-9 justify-center">
+    <div class="row text-grey-8 justify-center">
       <div class="col-auto"></div>
       <div class="col-xs-12 col-sm-6 col-md-4 q-pa-lg">
         <div class="text-h6 text-primary">
@@ -88,7 +88,7 @@
     </div>
 
     <!-- pictures -->
-    <div class="row text-grey-9 justify-center">
+    <div class="row text-grey-8 justify-center">
       <div class="col-auto"></div>
       <div class="col-xs-6 col-sm-3 col-md-2 q-pa-lg">
         <q-card class="my-card">
@@ -242,7 +242,7 @@
           padding
           arrows
           height="270px"
-          class="bg-blue-grey text-white shadow-1 rounded-borders"
+          class="bg-primary text-white shadow-1 rounded-borders"
         >
           <q-carousel-slide name="slide1" class="column no-wrap">
             <div class="q-mt-md text-h6 text-bold">

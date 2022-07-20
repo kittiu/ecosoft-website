@@ -12,19 +12,19 @@
           </div>
         </q-toolbar-title>
         <q-btn-group flat class="text-grey-6 gt-sm">
-          <q-btn>Home</q-btn>
+          <q-btn to="/">Home</q-btn>
           <q-separator vertical inset />
-          <q-btn>Our Approach</q-btn>
+          <q-btn to="/our-approach">Our Approach</q-btn>
           <q-separator vertical inset />
           <q-btn>Odoo ERP</q-btn>
           <q-separator vertical inset />
           <q-btn>FAQ</q-btn>
           <q-separator vertical inset />
-          <q-btn>Blogs</q-btn>
+          <q-btn to="/post">Blogs</q-btn>
           <q-separator vertical inset />
           <q-btn>Workshop</q-btn>
         </q-btn-group>
-        <q-btn class="bg-primary">Contact Us</q-btn>
+        <q-btn to="/contact" class="bg-primary">Contact Us</q-btn>
         <q-btn
           dense
           flat
