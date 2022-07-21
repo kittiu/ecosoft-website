@@ -3,14 +3,16 @@ const routes = [
     path: "/",
     component: () => import("layouts/MainLayout.vue"),
     children: [
-      { path: "", component: () => import("pages/IndexPage.vue") },
+      { path: "/", component: () => import("pages/IndexPage.vue") },
       {
-        path: "our-approach",
+        path: "/our-approach",
         component: () => import("src/pages/OurApproachPage.vue"),
       },
-      { path: "about", component: () => import("pages/AboutPage.vue") },
-      { path: "contact", component: () => import("pages/ContactPage.vue") },
-      { path: "post", component: () => import("pages/PostPage.vue") },
+      { path: "/post-list", component: () => import("pages/PostListPage.vue") },
+      {
+        path: "/post/:id",
+        component: () => import("pages/PostPage.vue"),
+      },
     ],
   },
   // Always leave this as last one,

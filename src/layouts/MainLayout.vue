@@ -6,25 +6,22 @@
           <div>
             <img
               alt="Ecosoft logo"
-              src="~assets/ecosoft-logo.png"
+              src="~assets/pics/ecosoft-logo.png"
               style="height: 70px"
             />
           </div>
         </q-toolbar-title>
-        <q-btn-group flat class="text-grey-6 gt-sm">
-          <q-btn to="/">Home</q-btn>
+        <q-btn-group flat class="text-grey-6 text-bold text-subtitle1 gt-sm">
+          <q-item to="/" exact>HOME </q-item>
           <q-separator vertical inset />
-          <q-btn to="/our-approach">Our Approach</q-btn>
+          <q-item to="/our-approach" exact>OUR APPROACH</q-item>
           <q-separator vertical inset />
-          <q-btn>Odoo ERP</q-btn>
+          <q-item to="/post-list" exact>BLOGS</q-item>
           <q-separator vertical inset />
-          <q-btn>FAQ</q-btn>
-          <q-separator vertical inset />
-          <q-btn to="/post">Blogs</q-btn>
-          <q-separator vertical inset />
-          <q-btn>Workshop</q-btn>
         </q-btn-group>
-        <q-btn to="/contact" class="bg-primary">Contact Us</q-btn>
+        <q-btn rounded @click="contactUs" class="bg-primary text-white q-ml-md"
+          >Contact Us</q-btn
+        >
         <q-btn
           dense
           flat
@@ -37,7 +34,14 @@
     </q-header>
 
     <q-drawer v-model="rightDrawerOpen" side="right" bordered>
-      <!-- drawer content -->
+      <q-list bordered separator>
+        <q-item-section class="q-ma-md" avatar>
+          <q-icon color="primary" name="menu" />
+        </q-item-section>
+        <q-item to="/" exact>HOME</q-item>
+        <q-item to="/our-approach">OUR APPROACH</q-item>
+        <q-item to="/post-list">BLOGS</q-item>
+      </q-list>
     </q-drawer>
     <!-- <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
@@ -85,25 +89,64 @@
       </div>
     </div>
   </q-layout>
+
+  <q-dialog v-model="showForm" persistent>
+    <q-card>
+      <q-bar class="bg-primary text-white"
+        >Hello
+        <q-space />
+        <q-btn dense round icon="close" flat v-close-popup></q-btn>
+      </q-bar>
+      <q-card-section style="max-height: 60vh" class="scroll"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, id alias.
+        Laudantium alias cum dolore nisi corporis. Expedita inventore unde odio
+        obcaecati asperiores quibusdam aperiam, quos id, voluptates laborum
+        non!</q-card-section
+      >
+      <q-card-actions>
+        <q-btn label="Accept">Accept</q-btn>
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
 </template>
 
-<script>
+<script setup>
 import { defineComponent, ref } from "vue";
+import { useQuasar } from "quasar";
+import axios from "axios";
 
-export default defineComponent({
-  name: "MainLayout",
+const $q = useQuasar();
+const rightDrawerOpen = ref(false);
+const showForm = ref(false);
 
-  components: {},
+function toggleRightDrawer() {
+  rightDrawerOpen.value = !rightDrawerOpen.value;
+}
 
-  setup() {
-    const rightDrawerOpen = ref(false);
+function testNotify() {
+  $q.notify("Message");
+}
 
-    return {
-      rightDrawerOpen,
-      toggleRightDrawer() {
-        rightDrawerOpen.value = !rightDrawerOpen.value;
-      },
-    };
-  },
-});
+function contactUs() {
+  $q.dialog({
+    title: "กรุณาใส่ข้อมูลเพื่อการติดต่อกลับ (ชื่อ, อีเมล์, เบอร์โทรศัพท์)",
+    prompt: {
+      model: "",
+      isValid: (val) => val.length > 2, // << here is the magic
+      type: "text", // optional
+    },
+    cancel: true,
+    persistent: true,
+  }).onOk((data) => {
+    axios
+      .get(process.env.MAIL_URL + "?subject=New lead from website&body=" + data)
+      .then(
+        $q.notify({
+          message: "ขอบคุณสำหรับข้อมูลการติดต่อ",
+          color: "secondary",
+          position: "top",
+        })
+      );
+  });
+}
 </script>

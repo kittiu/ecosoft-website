@@ -5,10 +5,10 @@
       class="row"
       style="background-image: linear-gradient(#6495ed, #b7d7e8)"
     >
-      <div class="col q-ma-lg" style="text-align: center">
+      <div class="col q-ma-lg gt-sm" style="text-align: center">
         <img
           alt="Ecosoft logo"
-          src="~assets/balloon.png"
+          src="~assets/pics/balloon.png"
           style="height: 200px"
           class="q-ml-xl"
         />
@@ -92,7 +92,7 @@
       <div class="col-auto"></div>
       <div class="col-xs-6 col-sm-3 col-md-2 q-pa-lg">
         <q-card class="my-card">
-          <q-img src="~assets/accounting.jpg">
+          <q-img src="~assets/pics/accounting.jpg">
             <div class="absolute-bottom text-subtitle1 text-bold text-center">
               Accounting
             </div>
@@ -101,7 +101,7 @@
       </div>
       <div class="col-xs-6 col-sm-3 col-md-2 q-pa-lg">
         <q-card class="my-card">
-          <q-img src="~assets/operations.jpg">
+          <q-img src="~assets/pics/operations.jpg">
             <div class="absolute-bottom text-subtitle1 text-bold text-center">
               Operations
             </div>
@@ -110,7 +110,7 @@
       </div>
       <div class="col-xs-6 col-sm-3 col-md-2 q-pa-lg">
         <q-card class="my-card">
-          <q-img src="~assets/inventory.jpg">
+          <q-img src="~assets/pics/inventory.jpg">
             <div class="absolute-bottom text-subtitle1 text-bold text-center">
               Inventory
             </div>
@@ -119,7 +119,7 @@
       </div>
       <div class="col-xs-6 col-sm-3 col-md-2 q-pa-lg">
         <q-card class="my-card">
-          <q-img src="~assets/mrp.jpg">
+          <q-img src="~assets/pics/mrp.jpg">
             <div class="absolute-bottom text-subtitle1 text-bold text-center">
               Production
             </div>
@@ -134,7 +134,7 @@
           <q-expansion-item default-opened group="somegroup">
             <template v-slot:header>
               <q-item-section avatar>
-                <img src="~assets/odoo.svg" style="height: 40px" />
+                <img src="~assets/pics/odoo.svg" style="height: 40px" />
               </q-item-section>
               <q-item-section />
             </template>
@@ -154,7 +154,7 @@
           <q-expansion-item group="somegroup">
             <template v-slot:header>
               <q-item-section avatar>
-                <img src="~assets/erpnext.png" style="height: 40px" />
+                <img src="~assets/pics/erpnext.png" style="height: 40px" />
               </q-item-section>
               <q-item-section />
             </template>
@@ -174,7 +174,7 @@
           <q-expansion-item group="somegroup">
             <template v-slot:header>
               <q-item-section avatar>
-                <img src="~assets/appsmith.png" style="height: 40px" />
+                <img src="~assets/pics/appsmith.png" style="height: 40px" />
               </q-item-section>
               <q-item-section />
             </template>
@@ -194,7 +194,7 @@
           <q-expansion-item group="somegroup">
             <template v-slot:header>
               <q-item-section avatar>
-                <img src="~assets/n8n.png" style="height: 40px" />
+                <img src="~assets/pics/n8n.png" style="height: 40px" />
               </q-item-section>
               <q-item-section />
             </template>
@@ -224,7 +224,7 @@
 
     <div class="row justify-center">
       <div class="col-xs-12 col-md-8">
-        <q-img alt="Ecosoft logo" src="~assets/customers.png" />
+        <q-img src="~assets/pics/customers.png" />
       </div>
     </div>
 
