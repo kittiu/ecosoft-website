@@ -54,6 +54,9 @@ module.exports = configure(function (/* ctx */) {
       },
       env: require("dotenv").config().parsed,
       vueRouterMode: "hash", // available values: 'hash', 'history'
+      // kittu
+      publicPath: "/vue", // corresponds with the reverse proxy setting where path prefix "/vue" forwards to Quasar
+
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,

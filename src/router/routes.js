@@ -13,6 +13,7 @@ const routes = [
         path: "/post/:id",
         component: () => import("pages/PostPage.vue"),
       },
+      { path: "/sign-in", component: () => import("pages/SignInPage.vue") },
     ],
   },
   // Always leave this as last one,

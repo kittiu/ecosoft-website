@@ -18,6 +18,8 @@
           <q-separator vertical inset />
           <q-item to="/post-list" exact>BLOGS</q-item>
           <q-separator vertical inset />
+          <q-item to="/sign-in" exact>SIGN IN</q-item>
+          <q-separator vertical inset />
         </q-btn-group>
         <q-btn rounded @click="contactUs" class="bg-primary text-white q-ml-md"
           >Contact Us</q-btn
@@ -41,6 +43,7 @@
         <q-item to="/" exact>HOME</q-item>
         <q-item to="/our-approach">OUR APPROACH</q-item>
         <q-item to="/post-list">BLOGS</q-item>
+        <q-item to="/sign-in">SIGN IN</q-item>
       </q-list>
     </q-drawer>
     <!-- <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
